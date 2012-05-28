@@ -1,0 +1,7 @@
+Este proyecto modela un simulador de choques elasticos. El objetivo del proyecto es mostrar como manejar algunas cuestiones cotidianas del desarrollo de proyetos con Java como ser:
+
+* Organizacion del codigo
+* Utilizacion de mocks
+* Medicion de la cobertura
+* Configuracion del build script con Ant (build.xml)
+
