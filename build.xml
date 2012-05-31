@@ -140,6 +140,21 @@
 		</cobertura-report>
 	</target>
 
+<taskdef resource="checkstyletask.properties"
+         classpath="${libs}/checkstyle-5.5-all.jar"/>
+
+<target name="checkstyle"
+        description="Generates a report of code convention violations.">
+
+  <checkstyle config="${libs}/sun_checks.xml"
+              failureProperty="checkstyle.failure"
+              failOnViolation="false">
+    <fileset dir="src" includes="**/*.java"/>
+  </checkstyle>
+
+</target>
+
+
 	<target name="medir.cobertura" depends="ejecutar.tests,coverage-report,summary-coverage-report,alternate-coverage-report" description="Compile, instrument ourself, run the tests and generate JUnit and coverage reports."/>
 
 </project>
