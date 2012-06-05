@@ -28,7 +28,7 @@ public class Particula implements ObjetoPosicionable, ObjetoVivo {
 		Vector nuevaPosicionCandidata = this.posicion.mas(this.velocidad.por(tiempoTranscurrido));
 		List<ObjetoPosicionable> objetos = this.superficie.getObjetos();
 		for (ObjetoPosicionable objeto : objetos) {
-			if(objeto.getPosicion().equals(nuevaPosicionCandidata)){
+			if(objeto.getPosicion().equals(nuevaPosicionCandidata)) {
 				puedoAvanzar = false;
 				this.chocarCon(objeto);
 			}
@@ -51,13 +51,16 @@ public class Particula implements ObjetoPosicionable, ObjetoVivo {
 		float v2yf = calcularVFinal(otraPelota.getVelocidad().getY(), this.velocidad.getY(), otraPelota.getMasa(), this.getMasa());
 		
 		this.velocidad = new Vector(v1xf, v1yf);
-		otraPelota.SetVelocidad(new Vector(v2xf, v2yf));
+		otraPelota.setVelocidad(new Vector(v2xf, v2yf));
 	}
 
-	// http://www.sc.ehu.es/sbweb/fisica/dinamica/con_mlineal/choques/choques.htm
-	private float calcularVFinal(float v1, float v2, float m1, float m2){
-		float rawResult = ((2*m2*v2) + (m1 - m2)*v1) / (m1 + m2);
-		return Math.round(rawResult * 10)/10; 
+	final static int ROUNDER = 10;
+	
+	// http://www.sc.ehu.es/sbweb/fisica/
+	// dinamica/con_mlineal/choques/choques.htm
+	private float calcularVFinal(float v1, float v2, float m1, float m2) {
+		float rawResult = ((2 * m2 * v2) + (m1 - m2) * v1) / (m1 + m2);
+		return Math.round(rawResult * ROUNDER) / ROUNDER; 
 	}
 	
 	public Vector getVelocidad() {
@@ -70,7 +73,7 @@ public class Particula implements ObjetoPosicionable, ObjetoVivo {
 	}
 
 	@Override
-	public void SetVelocidad(Vector velocidad) {
+	public void setVelocidad(Vector velocidad) {
 		this.velocidad = velocidad;
 	}
 	

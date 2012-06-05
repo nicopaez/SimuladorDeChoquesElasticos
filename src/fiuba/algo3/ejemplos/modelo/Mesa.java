@@ -3,7 +3,7 @@ package fiuba.algo3.ejemplos.modelo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Mesa implements Superficie, ObjetoPosicionable{
+public class Mesa implements Superficie, ObjetoPosicionable {
 
 	private int ancho;
 	public int getAlto() {
@@ -66,7 +66,7 @@ public class Mesa implements Superficie, ObjetoPosicionable{
 	}
 
 	@Override
-	public void SetVelocidad(Vector vector) {
+	public void setVelocidad(Vector vector) {
 		this.velocidad = vector;
 	}
 

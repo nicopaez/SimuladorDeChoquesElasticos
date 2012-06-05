@@ -8,7 +8,7 @@ public class Vector {
 		float result = 1;
 		result = prime * result + x;
 		result = prime * result + y;
-		return (int)result;
+		return (int) result;
 	}
 
 	@Override
@@ -29,7 +29,7 @@ public class Vector {
 
 	private float x;
 	private float y;
-	
+
 	public Vector(float x, float y) {
 		super();
 		this.x = x;
@@ -43,18 +43,16 @@ public class Vector {
 	public float getX() {
 		return x;
 	}
-	
-	public Vector invertir(){
+
+	public Vector invertir() {
 		return new Vector(this.x * -1, this.y * -1);
 	}
-	
-	public Vector por(int escalar){
+
+	public Vector por(int escalar) {
 		return new Vector(this.x * escalar, this.y * escalar);
 	}
-	
-	public Vector mas(Vector otroVector){
+
+	public Vector mas(Vector otroVector) {
 		return new Vector(this.x + otroVector.x, this.y + otroVector.y);
 	}
-	
-	
 }
